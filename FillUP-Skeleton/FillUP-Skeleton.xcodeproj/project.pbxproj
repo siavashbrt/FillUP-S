@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130D1E232CC300853A8E /* AppDelegate.swift */; };
+		F32813101E232CC300853A8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130F1E232CC300853A8E /* ViewController.swift */; };
+		F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F32813141E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld */; };
+		F32813181E232CC300853A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32813171E232CC300853A8E /* Assets.xcassets */; };
+		F328131B1E232CC300853A8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32813191E232CC300853A8E /* LaunchScreen.storyboard */; };
+		F32813261E232CC300853A8E /* FillUP_SkeletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32813251E232CC300853A8E /* FillUP_SkeletonTests.swift */; };
+		F32813311E232CC400853A8E /* FillUP_SkeletonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32813301E232CC400853A8E /* FillUP_SkeletonUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F32813221E232CC300853A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F32813021E232CC300853A8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F32813091E232CC300853A8E;
+			remoteInfo = "FillUP-Skeleton";
+		};
+		F328132D1E232CC400853A8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F32813021E232CC300853A8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F32813091E232CC300853A8E;
+			remoteInfo = "FillUP-Skeleton";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F328130A1E232CC300853A8E /* FillUP-Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FillUP-Skeleton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F328130D1E232CC300853A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F328130F1E232CC300853A8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F32813151E232CC300853A8E /* FillUP_Skeleton.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FillUP_Skeleton.xcdatamodel; sourceTree = "<group>"; };
+		F32813171E232CC300853A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F328131A1E232CC300853A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F328131C1E232CC300853A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F32813211E232CC300853A8E /* FillUP-SkeletonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FillUP-SkeletonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32813251E232CC300853A8E /* FillUP_SkeletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillUP_SkeletonTests.swift; sourceTree = "<group>"; };
+		F32813271E232CC300853A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F328132C1E232CC300853A8E /* FillUP-SkeletonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FillUP-SkeletonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32813301E232CC400853A8E /* FillUP_SkeletonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillUP_SkeletonUITests.swift; sourceTree = "<group>"; };
+		F32813321E232CC400853A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F32813071E232CC300853A8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F328131E1E232CC300853A8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F32813291E232CC300853A8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F32813011E232CC300853A8E = {
+			isa = PBXGroup;
+			children = (
+				F328130C1E232CC300853A8E /* FillUP-Skeleton */,
+				F32813241E232CC300853A8E /* FillUP-SkeletonTests */,
+				F328132F1E232CC400853A8E /* FillUP-SkeletonUITests */,
+				F328130B1E232CC300853A8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F328130B1E232CC300853A8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F328130A1E232CC300853A8E /* FillUP-Skeleton.app */,
+				F32813211E232CC300853A8E /* FillUP-SkeletonTests.xctest */,
+				F328132C1E232CC300853A8E /* FillUP-SkeletonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F328130C1E232CC300853A8E /* FillUP-Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				F328130D1E232CC300853A8E /* AppDelegate.swift */,
+				F328130F1E232CC300853A8E /* ViewController.swift */,
+				F32813171E232CC300853A8E /* Assets.xcassets */,
+				F32813191E232CC300853A8E /* LaunchScreen.storyboard */,
+				F328131C1E232CC300853A8E /* Info.plist */,
+				F32813141E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld */,
+			);
+			path = "FillUP-Skeleton";
+			sourceTree = "<group>";
+		};
+		F32813241E232CC300853A8E /* FillUP-SkeletonTests */ = {
+			isa = PBXGroup;
+			children = (
+				F32813251E232CC300853A8E /* FillUP_SkeletonTests.swift */,
+				F32813271E232CC300853A8E /* Info.plist */,
+			);
+			path = "FillUP-SkeletonTests";
+			sourceTree = "<group>";
+		};
+		F328132F1E232CC400853A8E /* FillUP-SkeletonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F32813301E232CC400853A8E /* FillUP_SkeletonUITests.swift */,
+				F32813321E232CC400853A8E /* Info.plist */,
+			);
+			path = "FillUP-SkeletonUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F32813091E232CC300853A8E /* FillUP-Skeleton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F32813351E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-Skeleton" */;
+			buildPhases = (
+				F32813061E232CC300853A8E /* Sources */,
+				F32813071E232CC300853A8E /* Frameworks */,
+				F32813081E232CC300853A8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FillUP-Skeleton";
+			productName = "FillUP-Skeleton";
+			productReference = F328130A1E232CC300853A8E /* FillUP-Skeleton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F32813201E232CC300853A8E /* FillUP-SkeletonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F32813381E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-SkeletonTests" */;
+			buildPhases = (
+				F328131D1E232CC300853A8E /* Sources */,
+				F328131E1E232CC300853A8E /* Frameworks */,
+				F328131F1E232CC300853A8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F32813231E232CC300853A8E /* PBXTargetDependency */,
+			);
+			name = "FillUP-SkeletonTests";
+			productName = "FillUP-SkeletonTests";
+			productReference = F32813211E232CC300853A8E /* FillUP-SkeletonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F328132B1E232CC300853A8E /* FillUP-SkeletonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F328133B1E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-SkeletonUITests" */;
+			buildPhases = (
+				F32813281E232CC300853A8E /* Sources */,
+				F32813291E232CC300853A8E /* Frameworks */,
+				F328132A1E232CC300853A8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F328132E1E232CC400853A8E /* PBXTargetDependency */,
+			);
+			name = "FillUP-SkeletonUITests";
+			productName = "FillUP-SkeletonUITests";
+			productReference = F328132C1E232CC300853A8E /* FillUP-SkeletonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F32813021E232CC300853A8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Siavash Baratchi";
+				TargetAttributes = {
+					F32813091E232CC300853A8E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 55BZEFVSXR;
+						ProvisioningStyle = Automatic;
+					};
+					F32813201E232CC300853A8E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 55BZEFVSXR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F32813091E232CC300853A8E;
+					};
+					F328132B1E232CC300853A8E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 55BZEFVSXR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F32813091E232CC300853A8E;
+					};
+				};
+			};
+			buildConfigurationList = F32813051E232CC300853A8E /* Build configuration list for PBXProject "FillUP-Skeleton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F32813011E232CC300853A8E;
+			productRefGroup = F328130B1E232CC300853A8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F32813091E232CC300853A8E /* FillUP-Skeleton */,
+				F32813201E232CC300853A8E /* FillUP-SkeletonTests */,
+				F328132B1E232CC300853A8E /* FillUP-SkeletonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F32813081E232CC300853A8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F328131B1E232CC300853A8E /* LaunchScreen.storyboard in Resources */,
+				F32813181E232CC300853A8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F328131F1E232CC300853A8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F328132A1E232CC300853A8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F32813061E232CC300853A8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */,
+				F32813101E232CC300853A8E /* ViewController.swift in Sources */,
+				F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F328131D1E232CC300853A8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F32813261E232CC300853A8E /* FillUP_SkeletonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F32813281E232CC300853A8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F32813311E232CC400853A8E /* FillUP_SkeletonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F32813231E232CC300853A8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F32813091E232CC300853A8E /* FillUP-Skeleton */;
+			targetProxy = F32813221E232CC300853A8E /* PBXContainerItemProxy */;
+		};
+		F328132E1E232CC400853A8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F32813091E232CC300853A8E /* FillUP-Skeleton */;
+			targetProxy = F328132D1E232CC400853A8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F32813191E232CC300853A8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F328131A1E232CC300853A8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F32813331E232CC400853A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F32813341E232CC400853A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F32813361E232CC400853A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-Skeleton";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F32813371E232CC400853A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-Skeleton";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F32813391E232CC400853A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				INFOPLIST_FILE = "FillUP-SkeletonTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-SkeletonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FillUP-Skeleton.app/FillUP-Skeleton";
+			};
+			name = Debug;
+		};
+		F328133A1E232CC400853A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				INFOPLIST_FILE = "FillUP-SkeletonTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-SkeletonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FillUP-Skeleton.app/FillUP-Skeleton";
+			};
+			name = Release;
+		};
+		F328133C1E232CC400853A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				INFOPLIST_FILE = "FillUP-SkeletonUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-SkeletonUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "FillUP-Skeleton";
+			};
+			name = Debug;
+		};
+		F328133D1E232CC400853A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				INFOPLIST_FILE = "FillUP-SkeletonUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-SkeletonUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "FillUP-Skeleton";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F32813051E232CC300853A8E /* Build configuration list for PBXProject "FillUP-Skeleton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F32813331E232CC400853A8E /* Debug */,
+				F32813341E232CC400853A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F32813351E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-Skeleton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F32813361E232CC400853A8E /* Debug */,
+				F32813371E232CC400853A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F32813381E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-SkeletonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F32813391E232CC400853A8E /* Debug */,
+				F328133A1E232CC400853A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F328133B1E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-SkeletonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F328133C1E232CC400853A8E /* Debug */,
+				F328133D1E232CC400853A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F32813141E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F32813151E232CC300853A8E /* FillUP_Skeleton.xcdatamodel */,
+			);
+			currentVersion = F32813151E232CC300853A8E /* FillUP_Skeleton.xcdatamodel */;
+			path = FillUP_Skeleton.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F32813021E232CC300853A8E /* Project object */;
+}
