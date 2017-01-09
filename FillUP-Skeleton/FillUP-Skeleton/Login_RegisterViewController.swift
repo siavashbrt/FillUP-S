@@ -8,27 +8,28 @@
 
 import UIKit
 
-class LoginPageViewController: UIViewController {
-
+class Login_RegisterViewController: UIViewController {
+    
     lazy var loginBtn:UIButton = {
         let button = UIButton()
-            button.backgroundColor = .lightGray
-            button.setTitle("Login", for: .normal)
-            button.addTarget(self, action: #selector(onLoginBtn(_:)), for: .touchUpInside)
-            button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .lightGray
+        button.setTitle("Login", for: .normal)
+        button.addTarget(self, action: #selector(onLoginBtn(_:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     
     lazy var registerBtn:UIButton = {
         let button = UIButton()
-            button.backgroundColor = .lightGray
-            button.setTitle("Register", for: .normal)
-            button.addTarget(self, action: #selector(onRegisterBtn(_:)), for: .touchUpInside)
-            button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .lightGray
+        button.setTitle("Register", for: .normal)
+        button.addTarget(self, action: #selector(onRegisterBtn(_:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
+    let userClass = Users()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +39,32 @@ class LoginPageViewController: UIViewController {
         print("Login-Register")
         
         setupPageLayout()
+        
+        //Fixes the unbalance view warning
+        perform(#selector(findTheRightView), with: nil, afterDelay: 0)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //Determines whether the user is Still loggein or not
+    internal func findTheRightView() {
+        
+        let isLoggedIn = userClass.isLoggedIn
+        
+        switch  isLoggedIn {
+        case true:
+            self.navigatePages(viewController: MainViewController())
+            break
+        default: return
+        }
+    }
+    
     fileprivate func setupPageLayout() {
-
+        
         //Add Register To View
         view.addSubview(registerBtn)
         
@@ -63,16 +81,23 @@ class LoginPageViewController: UIViewController {
         loginBtn.bottomAnchor.constraint(equalTo: registerBtn.topAnchor, constant: -5).isActive = true
     }
     
+    fileprivate func navigatePages(viewController: UIViewController) {
+        
+        let navigatePage = viewController
+        navigationController?.present(navigatePage, animated: true, completion: nil)
+    }
+    
     func onLoginBtn(_ sender: UIButton) {
         
         print("Login Pressed")
         
-        let loginPage = LogInViewController()
-        self.present(loginPage, animated: true, completion: nil)
+        self.navigatePages(viewController: LoginViewController())
     }
     
     func onRegisterBtn(_ sender: UIButton) {
         
         print("Register Pressed")
+        
+        self.navigatePages(viewController: RegisterViewController())
     }
 }

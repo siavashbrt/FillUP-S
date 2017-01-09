@@ -11,7 +11,7 @@ import UIKit
 
 class Users: NSObject {
  
-    private var _isLoggedin:Bool = true
+    private var _isLoggedin:Bool = false
 
     var isLoggedIn: Bool {
         return _isLoggedin

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1DE8661E23505B001DBC99 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1DE8651E23505B001DBC99 /* LogInViewController.swift */; };
+		0B1DE8661E23505B001DBC99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1DE8651E23505B001DBC99 /* LoginViewController.swift */; };
+		0B2632C91E2369C50055F8B2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2632C81E2369C50055F8B2 /* RegisterViewController.swift */; };
 		0B6837751E2336E600DA8BD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837741E2336E600DA8BD0 /* User.swift */; };
-		0B6837771E233AF300DA8BD0 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */; };
 		0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837781E233B1000DA8BD0 /* MainViewController.swift */; };
 		F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130D1E232CC300853A8E /* AppDelegate.swift */; };
-		F32813101E232CC300853A8E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130F1E232CC300853A8E /* RootViewController.swift */; };
+		F32813101E232CC300853A8E /* Login_RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130F1E232CC300853A8E /* Login_RegisterViewController.swift */; };
 		F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F32813141E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld */; };
 		F32813181E232CC300853A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32813171E232CC300853A8E /* Assets.xcassets */; };
 		F328131B1E232CC300853A8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32813191E232CC300853A8E /* LaunchScreen.storyboard */; };
@@ -38,13 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B1DE8651E23505B001DBC99 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		0B1DE8651E23505B001DBC99 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0B2632C81E2369C50055F8B2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0B6837741E2336E600DA8BD0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		0B6837781E233B1000DA8BD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F328130A1E232CC300853A8E /* FillUP-Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FillUP-Skeleton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F328130D1E232CC300853A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F328130F1E232CC300853A8E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F328130F1E232CC300853A8E /* Login_RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_RegisterViewController.swift; sourceTree = "<group>"; };
 		F32813151E232CC300853A8E /* FillUP_Skeleton.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FillUP_Skeleton.xcdatamodel; sourceTree = "<group>"; };
 		F32813171E232CC300853A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F328131A1E232CC300853A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,10 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				F328130D1E232CC300853A8E /* AppDelegate.swift */,
-				F328130F1E232CC300853A8E /* RootViewController.swift */,
-				0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */,
+				F328130F1E232CC300853A8E /* Login_RegisterViewController.swift */,
 				0B6837781E233B1000DA8BD0 /* MainViewController.swift */,
-				0B1DE8651E23505B001DBC99 /* LogInViewController.swift */,
+				0B1DE8651E23505B001DBC99 /* LoginViewController.swift */,
+				0B2632C81E2369C50055F8B2 /* RegisterViewController.swift */,
 				F32813171E232CC300853A8E /* Assets.xcassets */,
 				F32813191E232CC300853A8E /* LaunchScreen.storyboard */,
 				F328131C1E232CC300853A8E /* Info.plist */,
@@ -290,12 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1DE8661E23505B001DBC99 /* LogInViewController.swift in Sources */,
+				0B1DE8661E23505B001DBC99 /* LoginViewController.swift in Sources */,
 				F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */,
-				F32813101E232CC300853A8E /* RootViewController.swift in Sources */,
+				0B2632C91E2369C50055F8B2 /* RegisterViewController.swift in Sources */,
+				F32813101E232CC300853A8E /* Login_RegisterViewController.swift in Sources */,
 				F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */,
 				0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */,
-				0B6837771E233AF300DA8BD0 /* LoginPageViewController.swift in Sources */,
 				0B6837751E2336E600DA8BD0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

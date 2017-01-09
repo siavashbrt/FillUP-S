@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: RootViewController())
+        window?.rootViewController = UINavigationController(rootViewController: Login_RegisterViewController())
         
         return true
 
