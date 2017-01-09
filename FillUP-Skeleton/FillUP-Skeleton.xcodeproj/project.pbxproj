@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1DE8661E23505B001DBC99 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1DE8651E23505B001DBC99 /* LogInViewController.swift */; };
 		0B6837751E2336E600DA8BD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837741E2336E600DA8BD0 /* User.swift */; };
 		0B6837771E233AF300DA8BD0 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */; };
 		0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837781E233B1000DA8BD0 /* MainViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1DE8651E23505B001DBC99 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0B6837741E2336E600DA8BD0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		0B6837781E233B1000DA8BD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B1DE8691E2350E4001DBC99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			path = "FillUP-Skeleton";
+			sourceTree = "<group>";
+		};
 		0B6837711E23337900DA8BD0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		F32813011E232CC300853A8E = {
 			isa = PBXGroup;
 			children = (
+				0B1DE8691E2350E4001DBC99 /* Extensions */,
 				0B6837711E23337900DA8BD0 /* Model */,
 				F328130C1E232CC300853A8E /* FillUP-Skeleton */,
 				F32813241E232CC300853A8E /* FillUP-SkeletonTests */,
@@ -116,6 +127,7 @@
 				F328130F1E232CC300853A8E /* RootViewController.swift */,
 				0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */,
 				0B6837781E233B1000DA8BD0 /* MainViewController.swift */,
+				0B1DE8651E23505B001DBC99 /* LogInViewController.swift */,
 				F32813171E232CC300853A8E /* Assets.xcassets */,
 				F32813191E232CC300853A8E /* LaunchScreen.storyboard */,
 				F328131C1E232CC300853A8E /* Info.plist */,
@@ -278,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1DE8661E23505B001DBC99 /* LogInViewController.swift in Sources */,
 				F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */,
 				F32813101E232CC300853A8E /* RootViewController.swift in Sources */,
 				F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */,
