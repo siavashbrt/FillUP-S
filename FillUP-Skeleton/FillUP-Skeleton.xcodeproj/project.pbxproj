@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6837751E2336E600DA8BD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837741E2336E600DA8BD0 /* User.swift */; };
+		0B6837771E233AF300DA8BD0 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */; };
+		0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837781E233B1000DA8BD0 /* MainViewController.swift */; };
 		F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130D1E232CC300853A8E /* AppDelegate.swift */; };
-		F32813101E232CC300853A8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130F1E232CC300853A8E /* ViewController.swift */; };
+		F32813101E232CC300853A8E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F328130F1E232CC300853A8E /* RootViewController.swift */; };
 		F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F32813141E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld */; };
 		F32813181E232CC300853A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32813171E232CC300853A8E /* Assets.xcassets */; };
 		F328131B1E232CC300853A8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32813191E232CC300853A8E /* LaunchScreen.storyboard */; };
@@ -34,9 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B6837741E2336E600DA8BD0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		0B6837781E233B1000DA8BD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F328130A1E232CC300853A8E /* FillUP-Skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FillUP-Skeleton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F328130D1E232CC300853A8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F328130F1E232CC300853A8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F328130F1E232CC300853A8E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F32813151E232CC300853A8E /* FillUP_Skeleton.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FillUP_Skeleton.xcdatamodel; sourceTree = "<group>"; };
 		F32813171E232CC300853A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F328131A1E232CC300853A8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,9 +80,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B6837711E23337900DA8BD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B6837741E2336E600DA8BD0 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F32813011E232CC300853A8E = {
 			isa = PBXGroup;
 			children = (
+				0B6837711E23337900DA8BD0 /* Model */,
 				F328130C1E232CC300853A8E /* FillUP-Skeleton */,
 				F32813241E232CC300853A8E /* FillUP-SkeletonTests */,
 				F328132F1E232CC400853A8E /* FillUP-SkeletonUITests */,
@@ -98,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				F328130D1E232CC300853A8E /* AppDelegate.swift */,
-				F328130F1E232CC300853A8E /* ViewController.swift */,
+				F328130F1E232CC300853A8E /* RootViewController.swift */,
+				0B6837761E233AF300DA8BD0 /* LoginPageViewController.swift */,
+				0B6837781E233B1000DA8BD0 /* MainViewController.swift */,
 				F32813171E232CC300853A8E /* Assets.xcassets */,
 				F32813191E232CC300853A8E /* LaunchScreen.storyboard */,
 				F328131C1E232CC300853A8E /* Info.plist */,
@@ -188,12 +205,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Siavash Baratchi";
 				TargetAttributes = {
 					F32813091E232CC300853A8E = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 55BZEFVSXR;
+						DevelopmentTeam = LC5873RCDE;
 						ProvisioningStyle = Automatic;
 					};
 					F32813201E232CC300853A8E = {
@@ -262,8 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */,
-				F32813101E232CC300853A8E /* ViewController.swift in Sources */,
+				F32813101E232CC300853A8E /* RootViewController.swift in Sources */,
 				F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */,
+				0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */,
+				0B6837771E233AF300DA8BD0 /* LoginPageViewController.swift in Sources */,
+				0B6837751E2336E600DA8BD0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +348,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -378,6 +399,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -407,7 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				DEVELOPMENT_TEAM = LC5873RCDE;
 				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-Skeleton";
@@ -420,7 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55BZEFVSXR;
+				DEVELOPMENT_TEAM = LC5873RCDE;
 				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SiavashBaratchi.FillUP-Skeleton";
@@ -506,6 +528,7 @@
 				F32813371E232CC400853A8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F32813381E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-SkeletonTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +537,7 @@
 				F328133A1E232CC400853A8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F328133B1E232CC400853A8E /* Build configuration list for PBXNativeTarget "FillUP-SkeletonUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +546,7 @@
 				F328133D1E232CC400853A8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
