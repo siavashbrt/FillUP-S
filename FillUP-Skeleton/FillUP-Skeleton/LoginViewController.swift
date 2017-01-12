@@ -90,7 +90,7 @@ extension LoginViewController: GIDSignInDelegate {
             
             let userDetailsDic = ["Name":name,"Email":email]
             
-            FirebaseRef.dataBase.createFirebaseUser(userUID, user: userDetailsDic)
+            FirebaseRef.dataBase.createFirebaseUser(userUID, user: userDetailsDic as Dictionary<String, AnyObject>)
             print("Successfully Created Firebase User", userUID)
         })
         

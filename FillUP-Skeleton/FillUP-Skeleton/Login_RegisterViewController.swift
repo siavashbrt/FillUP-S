@@ -53,14 +53,15 @@ class Login_RegisterViewController: UIViewController {
     //Determines whether the user is Still loggein or not
     internal func findTheRightView() {
         
-//        let isLoggedIn = userClass.isLoggedIn
-//        
-//        switch  isLoggedIn {
-//        case true:
-//            self.navigatePages(viewController: MainViewController())
-//            break
-//        default: return
-//        }
+        guard let userUID = UserDefaults.standard.value(forKey: KEY_UID) else {
+            
+            print("NO USER IS LOGGED IN")
+            return
+        
+        }
+        
+        print("User is Logged In with", userUID)
+        self.navigatePages(viewController: MainViewController())
     }
     
     fileprivate func setupPageLayout() {
