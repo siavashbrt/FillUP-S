@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
-    lazy var googleLogin_Register:UIButton = {
-        let button = UIButton(type: .system)
+    lazy var googleLogin_Register:GIDSignInButton = {
+        let button = GIDSignInButton()
             button.addTarget(self, action: #selector(onGoogleLogin_Register(_:)), for: .touchUpInside)
             button.translatesAutoresizingMaskIntoConstraints = false
        return button
@@ -29,9 +31,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        
-        //Set Google Button for the login Page
-        googleLogin_Register.setTitle("Login With Google", for: .normal)
         
         setupPageLayout()
     }

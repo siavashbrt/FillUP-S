@@ -12,20 +12,20 @@ class Login_RegisterViewController: UIViewController {
     
     lazy var loginBtn:UIButton = {
         let button = UIButton()
-        button.backgroundColor = .lightGray
-        button.setTitle("Login", for: .normal)
-        button.addTarget(self, action: #selector(onLoginBtn(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
+            button.backgroundColor = .lightGray
+            button.setTitle("Login", for: .normal)
+            button.addTarget(self, action: #selector(onLoginBtn(_:)), for: .touchUpInside)
+            button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     
     lazy var registerBtn:UIButton = {
         let button = UIButton()
-        button.backgroundColor = .lightGray
-        button.setTitle("Register", for: .normal)
-        button.addTarget(self, action: #selector(onRegisterBtn(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
+            button.backgroundColor = .lightGray
+            button.setTitle("Register", for: .normal)
+            button.addTarget(self, action: #selector(onRegisterBtn(_:)), for: .touchUpInside)
+            button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -35,13 +35,13 @@ class Login_RegisterViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = .white
-        print("Login-Register")
-        
-        setupPageLayout()
+        //Hide The NavBar on Top
+        self.navigationController?.isNavigationBarHidden = true
+        self.view.backgroundColor = .white
+        self.setupPageLayout()
         
         //Fixes the unbalance view warning
-        perform(#selector(findTheRightView), with: nil, afterDelay: 0)
+        self.perform(#selector(findTheRightView), with: nil, afterDelay: 0)
     }
     
     override func didReceiveMemoryWarning() {

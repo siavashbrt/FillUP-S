@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class RegisterViewController: LoginViewController {
 
@@ -14,9 +16,6 @@ class RegisterViewController: LoginViewController {
     override func viewDidLoad() {
         
         view.backgroundColor = .white
-        
-        //Set Google Button for the login Page
-        googleLogin_Register.setTitle("Register With Google", for: .normal)
         
         setupPageLayout()
     }

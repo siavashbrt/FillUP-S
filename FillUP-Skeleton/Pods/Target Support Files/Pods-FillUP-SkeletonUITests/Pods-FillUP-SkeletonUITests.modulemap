@@ -1,0 +1,6 @@
+framework module Pods_FillUP_SkeletonUITests {
+  umbrella header "Pods-FillUP-SkeletonUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
