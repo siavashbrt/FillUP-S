@@ -10,11 +10,10 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
 
     lazy var googleLogin_Register:GIDSignInButton = {
         let button = GIDSignInButton()
-            button.addTarget(self, action: #selector(onGoogleLogin_Register(_:)), for: .touchUpInside)
             button.translatesAutoresizingMaskIntoConstraints = false
        return button
     }()
@@ -31,6 +30,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         
         setupPageLayout()
     }
@@ -58,17 +60,42 @@ class LoginViewController: UIViewController {
         googleLogin_Register.topAnchor.constraint(equalTo: backBtn.bottomAnchor, constant: 50).isActive = true
     }
     
-    func onGoogleLogin_Register(_ sender: UIButton) {
-        
-        print("Login With GOOGLE")
-        
-        let mainPage = MainViewController()
-        self.present(mainPage, animated: true, completion: nil)
-        
-    }
-    
     func onBackBtn(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK - Extension LoginIn to Google
+extension LoginViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let err = error {
+            print("Failed Sigining into Google", err)
+            return
+        }
+        
+        guard let idToken = user.authentication.idToken else {return}
+        guard let accessToken = user.authentication.accessToken else {return}
+        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            
+            if let err = error {
+                print("Failed To Create Firebase User", err)
+                return
+            }
+            guard let userUID = user?.uid, let name = user?.displayName, let email = user?.email else {return}
+            
+            let userDetailsDic = ["Name":name,"Email":email]
+            
+            FirebaseRef.dataBase.createFirebaseUser(userUID, user: userDetailsDic)
+            print("Successfully Created Firebase User", userUID)
+        })
+        
+        print("Successfully Loged In to google")
+        let mainPage = MainViewController()
+        self.present(mainPage, animated: true, completion: nil)
     }
 }

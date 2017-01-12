@@ -19,13 +19,4 @@ class RegisterViewController: LoginViewController {
         
         setupPageLayout()
     }
-    
-    //Overriding the button functionality
-    override func onGoogleLogin_Register(_ sender: UIButton) {
-        
-        print("Signed Up With GOOGLE")
-        
-        let mainPage = MainViewController()
-        self.present(mainPage, animated: true, completion: nil)
-    }
 }

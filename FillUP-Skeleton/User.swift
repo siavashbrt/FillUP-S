@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
+let KEY_UID = "uid"
+
 class Users: NSObject {
  
-    private var _isLoggedin:Bool = false
+    private var _isLoggedin:Bool?
 
-    var isLoggedIn: Bool {
+    var isLoggedIn: Bool? {
         return _isLoggedin
     }
 }

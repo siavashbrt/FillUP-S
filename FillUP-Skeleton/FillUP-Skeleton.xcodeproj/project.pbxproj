@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B1DE8661E23505B001DBC99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1DE8651E23505B001DBC99 /* LoginViewController.swift */; };
+		0B1E88511E2740D90036E86D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B1E88501E2740D90036E86D /* GoogleService-Info.plist */; };
+		0B1E88531E2747D10036E86D /* FirebaseRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1E88521E2747D10036E86D /* FirebaseRef.swift */; };
 		0B2632C91E2369C50055F8B2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2632C81E2369C50055F8B2 /* RegisterViewController.swift */; };
 		0B6837751E2336E600DA8BD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837741E2336E600DA8BD0 /* User.swift */; };
 		0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837781E233B1000DA8BD0 /* MainViewController.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		0727E52D46DB11E87B3CB970 /* Pods-FillUP-SkeletonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillUP-SkeletonUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FillUP-SkeletonUITests/Pods-FillUP-SkeletonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0B1DE8651E23505B001DBC99 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0B1E88501E2740D90036E86D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B1E88521E2747D10036E86D /* FirebaseRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRef.swift; sourceTree = "<group>"; };
 		0B2632C81E2369C50055F8B2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0B6837741E2336E600DA8BD0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B6837781E233B1000DA8BD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0B6837741E2336E600DA8BD0 /* User.swift */,
+				0B1E88521E2747D10036E86D /* FirebaseRef.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				F32813191E232CC300853A8E /* LaunchScreen.storyboard */,
 				F328131C1E232CC300853A8E /* Info.plist */,
 				F32813141E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld */,
+				0B1E88501E2740D90036E86D /* GoogleService-Info.plist */,
 			);
 			path = "FillUP-Skeleton";
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 			files = (
 				F328131B1E232CC300853A8E /* LaunchScreen.storyboard in Resources */,
 				F32813181E232CC300853A8E /* Assets.xcassets in Resources */,
+				0B1E88511E2740D90036E86D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1E88531E2747D10036E86D /* FirebaseRef.swift in Sources */,
 				0B1DE8661E23505B001DBC99 /* LoginViewController.swift in Sources */,
 				F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */,
 				0B2632C91E2369C50055F8B2 /* RegisterViewController.swift in Sources */,

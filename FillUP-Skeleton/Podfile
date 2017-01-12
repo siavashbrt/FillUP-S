@@ -6,6 +6,7 @@ target 'FillUP-Skeleton' do
   use_frameworks!
 
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'GoogleSignIn'
 
   # Pods for FillUP-Skeleton
