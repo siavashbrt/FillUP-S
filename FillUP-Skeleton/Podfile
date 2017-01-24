@@ -8,6 +8,8 @@ target 'FillUP-Skeleton' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
   # Pods for FillUP-Skeleton
 

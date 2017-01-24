@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import GoogleSignIn
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,7 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //GoogleSignIn Cofigure
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        
+        // Google Map SDK API Key
+        GMSServices.provideAPIKey("AIzaSyB3fD_vWLKqZ7KixSu4OPZwViehDdf0kJM")
     
+        // Google Places API
+        GMSPlacesClient.provideAPIKey("YOUR_API_KEY")
+
+        
         return true
     }
     
