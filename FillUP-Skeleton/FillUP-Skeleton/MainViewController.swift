@@ -46,8 +46,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         let UserCurrentLocationCoordinates = locationManager.location?.coordinate
         
         // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: UserCurrentLocationCoordinates!.latitude, longitude: UserCurrentLocationCoordinates!.longitude, zoom: 16.0)
+        // coordinate 35.715298,51.404343 (Tehran) at zoom level 8.0.
+        let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: 8.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         // Enabeling my location.
@@ -59,6 +59,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // Enabeling compass button.
         mapView.settings.compassButton = true
 
+        //mapView.animate(toViewingAngle: 45)
+
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: (UserCurrentLocationCoordinates?.latitude)!, longitude: (UserCurrentLocationCoordinates?.longitude)!))
+
+        // To set the zoom level when mylocation button is pressed
+        mapView.animate(toZoom: 6)
 
         view = mapView
         
