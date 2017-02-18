@@ -86,6 +86,7 @@ extension LoginViewController: GIDSignInDelegate {
                 print("Failed To Create Firebase User", err)
                 return
             }
+            
             guard let userUID = user?.uid, let name = user?.displayName, let email = user?.email else {return}
             
             let userDetailsDic = ["Name":name,"Email":email]

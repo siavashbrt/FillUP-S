@@ -10,7 +10,19 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
+<<<<<<< Updated upstream
 class MainViewController: UIViewController, CLLocationManagerDelegate {
+=======
+class MainViewController: UIViewController {
+    
+    lazy var settingsBtn:UIButton = {
+        let btn = UIButton()
+            let BtnImage = UIImage(named: "settings")
+            btn.setImage(BtnImage, for: .normal)
+            btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
+       return btn
+    }()
+>>>>>>> Stashed changes
 
     //  to get and manage user current location
     let locationManager = CLLocationManager()
@@ -19,8 +31,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = .blue
-        print("Home")
+            view.backgroundColor = .white
+        
+        setupView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +41,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+<<<<<<< Updated upstream
     override func loadView() {
         
 
@@ -77,4 +91,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 
+=======
+    internal func setupView() {
+        
+        view.addSubview(settingsBtn)
+        
+        view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
+        view.addConstraintsWithFormat(format: "V:|-40-[v0]", view: settingsBtn)
+    }
+    
+    internal func onSettings(_ sender: UIButton) {
+    
+        let settingsViewsController = SettingsTableViewController()
+        self.navigationController?.pushViewController(settingsViewsController, animated: true)
+    }
+>>>>>>> Stashed changes
 }
