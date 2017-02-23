@@ -57,7 +57,6 @@ class Login_RegisterViewController: UIViewController {
             
             print("NO USER IS LOGGED IN")
             return
-        
         }
         
         print("User is Logged In with", userUID)
@@ -91,14 +90,12 @@ class Login_RegisterViewController: UIViewController {
     func onLoginBtn(_ sender: UIButton) {
         
         print("Login Pressed")
-        
         self.navigatePages(viewController: LoginViewController())
     }
     
     func onRegisterBtn(_ sender: UIButton) {
         
         print("Register Pressed")
-        
         self.navigatePages(viewController: RegisterViewController())
     }
 }

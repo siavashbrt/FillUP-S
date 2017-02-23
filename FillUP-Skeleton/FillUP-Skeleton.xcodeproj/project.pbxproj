@@ -14,6 +14,7 @@
 		0B6837751E2336E600DA8BD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837741E2336E600DA8BD0 /* User.swift */; };
 		0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6837781E233B1000DA8BD0 /* MainViewController.swift */; };
 		0B7D61B11E24144E00101982 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7D61B01E24144E00101982 /* Extensions.swift */; };
+		0BD92D861E2DA0CC00C2D2F0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD92D851E2DA0CC00C2D2F0 /* SettingsTableViewController.swift */; };
 		0C736C0CACB5139A75268AB0 /* Pods_FillUP_Skeleton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85F48480D49536CEA5C76BF9 /* Pods_FillUP_Skeleton.framework */; };
 		167BEE52D12D91F1F7A89CA1 /* Pods_FillUP_SkeletonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D0A22F5A41EB28E82B3348 /* Pods_FillUP_SkeletonTests.framework */; };
 		ED36329AA729E8524E76EC89 /* Pods_FillUP_SkeletonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313D36DFD121DFF7441F3E6A /* Pods_FillUP_SkeletonUITests.framework */; };
@@ -53,6 +54,7 @@
 		0B6837741E2336E600DA8BD0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B6837781E233B1000DA8BD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0B7D61B01E24144E00101982 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0BD92D851E2DA0CC00C2D2F0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2B308AF2A49A17219D4369AC /* Pods-FillUP-SkeletonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillUP-SkeletonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FillUP-SkeletonTests/Pods-FillUP-SkeletonTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DA1C64D8B59280EAA9B87B4 /* Pods-FillUP-Skeleton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillUP-Skeleton.release.xcconfig"; path = "Pods/Target Support Files/Pods-FillUP-Skeleton/Pods-FillUP-Skeleton.release.xcconfig"; sourceTree = "<group>"; };
 		313D36DFD121DFF7441F3E6A /* Pods_FillUP_SkeletonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FillUP_SkeletonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 				0B6837781E233B1000DA8BD0 /* MainViewController.swift */,
 				0B1DE8651E23505B001DBC99 /* LoginViewController.swift */,
 				0B2632C81E2369C50055F8B2 /* RegisterViewController.swift */,
+				0BD92D851E2DA0CC00C2D2F0 /* SettingsTableViewController.swift */,
 				F32813171E232CC300853A8E /* Assets.xcassets */,
 				F32813191E232CC300853A8E /* LaunchScreen.storyboard */,
 				F328131C1E232CC300853A8E /* Info.plist */,
@@ -502,6 +505,7 @@
 				0B2632C91E2369C50055F8B2 /* RegisterViewController.swift in Sources */,
 				0B7D61B11E24144E00101982 /* Extensions.swift in Sources */,
 				F32813101E232CC300853A8E /* Login_RegisterViewController.swift in Sources */,
+				0BD92D861E2DA0CC00C2D2F0 /* SettingsTableViewController.swift in Sources */,
 				F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */,
 				0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */,
 				0B6837751E2336E600DA8BD0 /* User.swift in Sources */,

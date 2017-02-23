@@ -12,6 +12,14 @@ import CoreLocation
 import GooglePlaces
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
+    
+    lazy var settingsBtn:UIButton = {
+        let btn = UIButton()
+            let BtnImage = UIImage(named: "settings")
+            btn.setImage(BtnImage, for: .normal)
+            btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
+       return btn
+    }()
 
     //  to get and manage user current location
     let locationManager = CLLocationManager()
@@ -47,6 +55,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
 
         setupPageLayout()
 
+        view.backgroundColor = .white
+        
+        setupView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +79,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         view.addSubview(subView)
         searchController?.searchBar.sizeToFit()
         searchController?.hidesNavigationBarDuringPresentation = false
-        
 
     }
     
@@ -145,5 +155,19 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
+    internal func setupView() {
+        
+        view.addSubview(settingsBtn)
+        
+        view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
+        view.addConstraintsWithFormat(format: "V:|-40-[v0]", view: settingsBtn)
+    }
+    
+    internal func onSettings(_ sender: UIButton) {
+    
+        let settingsViewsController = SettingsTableViewController()
+        self.navigationController?.pushViewController(settingsViewsController, animated: true)
     }
 }
