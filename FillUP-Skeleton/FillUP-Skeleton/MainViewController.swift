@@ -20,12 +20,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
        return btn
     }()
+    
 
     //  to get and manage user current location
     let locationManager = CLLocationManager()
     
     var mapView = GMSMapView()
-
     
     // searchbar variables
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -39,51 +39,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
         
+        view.backgroundColor = .white
+        
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
-        
         
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
         definesPresentationContext = true
         
-        view.backgroundColor = .blue
-        print("Home")
-        
         // load the map and current location
         loadMapView()
 
-        setupPageLayout()
-
-        view.backgroundColor = .white
-        
         setupView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func setupPageLayout() {
-        
-        let subView = UIView(frame: CGRect(x: 0, y: 45.0, width: 420.0, height: 45.0))
-        
-        subView.addSubview((searchController?.searchBar)!)
-        
-        // Layout map
-        view = mapView
-        
-        // Layout searchbar
-        //let searchbarSubView = searchController?.searchBar
-        view.addSubview(subView)
-        searchController?.searchBar.sizeToFit()
-        searchController?.hidesNavigationBarDuringPresentation = false
-
-    }
-    
-
-    
     func loadMapView() {
         
         // Ask for Authorisation from the User.
@@ -129,6 +99,38 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         marker.snippet = ""
         marker.map = mapView
     }
+    
+    internal func setupView() {
+        
+        guard let searchBar = searchController?.searchBar else {return}
+        
+        view = mapView
+    
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
+    
+        view.addSubview(settingsBtn)
+        
+        view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
+        view.addConstraintsWithFormat(format: "V:|-20-[v0]", view: settingsBtn)
+    
+        view.addSubview((searchController?.searchBar)!)
+        
+        view.addConstraintsWithFormat(format: "H:|[v0]|", view: searchBar)
+        view.addConstraintsWithFormat(format: "V:|-60-[v0(45)]|", view: searchBar)
+        
+    }
+    
+    internal func onSettings(_ sender: UIButton) {
+        
+    
+        let settingsViewsController = SettingsTableViewController()
+        self.navigationController?.pushViewController(settingsViewsController, animated: true)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
 
 // Handle the user's selection.
@@ -155,19 +157,5 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-
-    internal func setupView() {
-        
-        view.addSubview(settingsBtn)
-        
-        view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
-        view.addConstraintsWithFormat(format: "V:|-40-[v0]", view: settingsBtn)
-    }
-    
-    internal func onSettings(_ sender: UIButton) {
-    
-        let settingsViewsController = SettingsTableViewController()
-        self.navigationController?.pushViewController(settingsViewsController, animated: true)
     }
 }
