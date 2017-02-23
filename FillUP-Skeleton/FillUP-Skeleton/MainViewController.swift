@@ -9,18 +9,44 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import GooglePlaces
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
 
     //  to get and manage user current location
     let locationManager = CLLocationManager()
     
+    var mapView = GMSMapView()
+
+    
+    // searchbar variables
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
+        
+        
+        // When UISearchController presents the results view, present it in
+        // this view controller, not one further up the chain.
+        definesPresentationContext = true
+        
         view.backgroundColor = .blue
         print("Home")
+        
+        // load the map and current location
+        loadMapView()
+
+        setupPageLayout()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,9 +54,28 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func loadView() {
+    func setupPageLayout() {
+        
+        let subView = UIView(frame: CGRect(x: 0, y: 45.0, width: 420.0, height: 45.0))
+        
+        subView.addSubview((searchController?.searchBar)!)
+        
+        // Layout map
+        view = mapView
+        
+        // Layout searchbar
+        //let searchbarSubView = searchController?.searchBar
+        view.addSubview(subView)
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
         
 
+    }
+    
+
+    
+    func loadMapView() {
+        
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
         
@@ -48,7 +93,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate 35.715298,51.404343 (Tehran) at zoom level 8.0.
         let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: 8.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         // Enabeling my location.
         mapView.isMyLocationEnabled = true
@@ -66,7 +111,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // To set the zoom level when mylocation button is pressed
         mapView.animate(toZoom: 6)
 
-        view = mapView
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
@@ -75,6 +119,31 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         marker.snippet = ""
         marker.map = mapView
     }
-    
+}
 
+// Handle the user's selection.
+extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        // Do something with the selected place.
+        print("Place name: \(place.name)")
+        print("Place address: \(place.formattedAddress)")
+        print("Place attributions: \(place.attributions)")
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error){
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
 }
