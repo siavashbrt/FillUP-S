@@ -16,8 +16,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     lazy var settingsBtn:UIButton = {
         let btn = UIButton()
             let BtnImage = UIImage(named: "settings")
-            btn.setImage(BtnImage, for: .normal)
-            btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
+                btn.setImage(BtnImage, for: .normal)
+                btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
        return btn
     }()
     
@@ -38,8 +38,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
-        
-        view.backgroundColor = .white
         
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
@@ -91,10 +89,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         // To set the zoom level when mylocation button is pressed
         mapView.animate(toZoom: 6)
 
+        guard let latitude = UserCurrentLocationCoordinates?.latitude,
+                  let longtitude = UserCurrentLocationCoordinates?.longitude else {return}
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: UserCurrentLocationCoordinates!.latitude, longitude: UserCurrentLocationCoordinates!.longitude)
+        marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
         marker.title = "Current Location"
         marker.snippet = ""
         marker.map = mapView
@@ -104,26 +104,28 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         guard let searchBar = searchController?.searchBar else {return}
         
-        view = mapView
-    
-        searchController?.searchBar.sizeToFit()
-        searchController?.hidesNavigationBarDuringPresentation = false
+        view.addSubview(mapView)
+        
+        view.addConstraintsWithFormat(format: "H:|[v0]|", view: mapView)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", view: mapView)
     
         view.addSubview(settingsBtn)
         
         view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
         view.addConstraintsWithFormat(format: "V:|-20-[v0]", view: settingsBtn)
     
-        view.addSubview((searchController?.searchBar)!)
+        view.addSubview(searchBar)
         
         view.addConstraintsWithFormat(format: "H:|[v0]|", view: searchBar)
         view.addConstraintsWithFormat(format: "V:|-60-[v0(45)]|", view: searchBar)
+        
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
         
     }
     
     internal func onSettings(_ sender: UIButton) {
         
-    
         let settingsViewsController = SettingsTableViewController()
         self.navigationController?.pushViewController(settingsViewsController, animated: true)
     }
