@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyB3fD_vWLKqZ7KixSu4OPZwViehDdf0kJM")
     
         // Google Places API
-        GMSPlacesClient.provideAPIKey("YOUR_API_KEY")
+        GMSPlacesClient.provideAPIKey("AIzaSyCg9zrQaP9LyT6KPJaUcdhKT48OTXVKPy4")
 
         
         return true

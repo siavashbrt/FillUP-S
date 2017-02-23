@@ -120,6 +120,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         view.addConstraintsWithFormat(format: "H:|[v0]|", view: mapView)
         view.addConstraintsWithFormat(format: "V:|[v0]|", view: mapView)
+
+    
+        searchController?.searchBar.sizeToFit()
+        searchController?.hidesNavigationBarDuringPresentation = false
+
     
         view.addSubview(settingsBtn)
         
