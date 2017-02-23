@@ -34,6 +34,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         
         resultsViewController = GMSAutocompleteResultsViewController()
@@ -52,6 +53,17 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         setupView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //Needs More Work
+        guard let userKey = UserDefaults.standard.value(forKey: KEY_UID) as? String else {return}
+        
+        if userKey.isEmpty {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func loadMapView() {
         
         // Ask for Authorisation from the User.
@@ -127,7 +139,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     internal func onSettings(_ sender: UIButton) {
         
         let settingsViewsController = SettingsTableViewController()
-        self.navigationController?.pushViewController(settingsViewsController, animated: true)
+        let navController = UINavigationController(rootViewController: settingsViewsController)
+        
+        self.present(navController, animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool {

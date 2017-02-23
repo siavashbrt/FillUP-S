@@ -13,11 +13,11 @@ let KEY_UID = "uid"
 
 class Users: NSObject {
  
-    private var _isLoggedin:Bool?
-
-    var isLoggedIn: Bool? {
-        return _isLoggedin
-    }
+//    private var _isLoggedin:Bool?
+//
+//    var isLoggedIn: Bool? {
+//        return _isLoggedin
+//    }
 }
 
 
