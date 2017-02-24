@@ -19,7 +19,6 @@ class Login_RegisterViewController: UIViewController {
         return button
     }()
     
-    
     lazy var registerBtn:UIButton = {
         let button = UIButton()
             button.backgroundColor = .lightGray

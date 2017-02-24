@@ -21,7 +21,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
        return btn
     }()
     
-
+    let subView:UIView = {
+        let view = UIView()
+            view.backgroundColor = .clear
+            view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     //  to get and manage user current location
     let locationManager = CLLocationManager()
     
@@ -35,11 +41,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+    
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
-        
+ 
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
         
@@ -63,6 +70,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    
     
     func loadMapView() {
         
@@ -121,27 +130,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         view.addConstraintsWithFormat(format: "H:|[v0]|", view: mapView)
         view.addConstraintsWithFormat(format: "V:|[v0]|", view: mapView)
 
-    
-        //searchController?.searchBar.sizeToFit()
-        //searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.searchBar.sizeToFit()
 
-        navigationController?.navigationBar.isTranslucent = false
-        searchController?.hidesNavigationBarDuringPresentation = false
-        
-        // This makes the view area include the nav bar even though it is opaque.
-        // Adjust the view placement down.
-        self.extendedLayoutIncludesOpaqueBars = true
-        self.edgesForExtendedLayout = .top
     
         view.addSubview(settingsBtn)
         
         view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
         view.addConstraintsWithFormat(format: "V:|-20-[v0]", view: settingsBtn)
     
-        view.addSubview(searchBar)
+        view.addSubview(subView)
+        subView.addSubview(searchBar)
         
-        view.addConstraintsWithFormat(format: "H:|[v0]|", view: searchBar)
-        view.addConstraintsWithFormat(format: "V:|-60-[v0(45)]|", view: searchBar)
+        subView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        subView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        subView.topAnchor.constraint(equalTo: settingsBtn.topAnchor, constant: 40).isActive = true
+        subView.heightAnchor.constraint(equalToConstant: searchBar.frame.height).isActive = true
         
     }
     
