@@ -122,9 +122,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         view.addConstraintsWithFormat(format: "V:|[v0]|", view: mapView)
 
     
-        searchController?.searchBar.sizeToFit()
-        searchController?.hidesNavigationBarDuringPresentation = false
+        //searchController?.searchBar.sizeToFit()
+        //searchController?.hidesNavigationBarDuringPresentation = false
 
+        navigationController?.navigationBar.isTranslucent = false
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
+        // This makes the view area include the nav bar even though it is opaque.
+        // Adjust the view placement down.
+        self.extendedLayoutIncludesOpaqueBars = true
+        self.edgesForExtendedLayout = .top
     
         view.addSubview(settingsBtn)
         
@@ -135,9 +142,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         view.addConstraintsWithFormat(format: "H:|[v0]|", view: searchBar)
         view.addConstraintsWithFormat(format: "V:|-60-[v0(45)]|", view: searchBar)
-        
-        searchController?.searchBar.sizeToFit()
-        searchController?.hidesNavigationBarDuringPresentation = false
         
     }
     
@@ -163,6 +167,13 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress)")
         print("Place attributions: \(place.attributions)")
+        
+        // Set the map location
+        setMapLocation(selectedPlace: place)
+        
+        // Set the marker
+        setMapMarkertoSelectedPlace(selectedPlace: place)
+
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
@@ -178,5 +189,21 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    func setMapMarkertoSelectedPlace(selectedPlace: GMSPlace)
+    {
+    // Creates a marker in the center of the map.
+    let marker = GMSMarker()
+    marker.position = CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
+    marker.title = selectedPlace.name
+    marker.snippet = selectedPlace.formattedAddress
+    marker.map = mapView
+    }
+    
+    func setMapLocation(selectedPlace: GMSPlace)
+    {
+        mapView.animate(toLocation: CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude))
+        mapView.animate(toZoom: 15)
     }
 }
