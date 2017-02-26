@@ -287,7 +287,7 @@
 				TargetAttributes = {
 					F32813091E232CC300853A8E = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = LC5873RCDE;
+						DevelopmentTeam = 55BZEFVSXR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -655,7 +655,7 @@
 			baseConfigurationReference = 31CDBF0913E62B66F5EA0E1A /* Pods-FillUP-Skeleton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LC5873RCDE;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
 				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SiavashBaratchi.FillUP;
@@ -669,7 +669,7 @@
 			baseConfigurationReference = 2DA1C64D8B59280EAA9B87B4 /* Pods-FillUP-Skeleton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LC5873RCDE;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
 				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SiavashBaratchi.FillUP;

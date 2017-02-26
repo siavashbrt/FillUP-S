@@ -11,7 +11,7 @@ import GoogleMaps
 import CoreLocation
 import GooglePlaces
 
-class MainViewController: UIViewController, CLLocationManagerDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     lazy var settingsBtn:UIButton = {
         let btn = UIButton()
@@ -19,6 +19,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                 btn.setImage(BtnImage, for: .normal)
                 btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
        return btn
+    }()
+    
+    lazy var mapMarker:GMSMarker = {
+        let mrk = GMSMarker()
+        mrk.icon = UIImage(named: "marker")
+        return mrk
     }()
     
     let subView:UIView = {
@@ -94,6 +100,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: 8.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
+        mapView.delegate = self
+        
         // Enabeling my location.
         mapView.isMyLocationEnabled = true
 
@@ -114,11 +122,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                   let longtitude = UserCurrentLocationCoordinates?.longitude else {return}
         
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
-        marker.title = "Current Location"
-        marker.snippet = ""
-        marker.map = mapView
+        mapMarker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
+        mapMarker.title = "Current Location"
+        mapMarker.snippet = ""
+        mapMarker.map = mapView
     }
     
     internal func setupView() {
@@ -159,6 +166,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        searchController?.searchBar.text = marker.snippet
+        return true
+    }
 }
 
 // Handle the user's selection.
@@ -197,11 +209,10 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     func setMapMarkertoSelectedPlace(selectedPlace: GMSPlace)
     {
     // Creates a marker in the center of the map.
-    let marker = GMSMarker()
-    marker.position = CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
-    marker.title = selectedPlace.name
-    marker.snippet = selectedPlace.formattedAddress
-    marker.map = mapView
+    mapMarker.position = CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
+    mapMarker.title = selectedPlace.name
+    mapMarker.snippet = selectedPlace.formattedAddress
+    mapMarker.map = mapView
     }
     
     func setMapLocation(selectedPlace: GMSPlace)
