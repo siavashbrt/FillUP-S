@@ -37,6 +37,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     //  to get and manage user current location
     let locationManager = CLLocationManager()
     
+    // Zoom Levels
+    // 1: World
+    // 5: Landmass/continent
+    // 10: City
+    // 15: Streets
+    // 20: Buildings
+    let streetZoom: Float = 15.0
+    
+    let geocoder = GMSGeocoder()
+    
     var mapView = GMSMapView()
     
     // searchbar variables
@@ -97,7 +107,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate 35.715298,51.404343 (Tehran) at zoom level 8.0.
-        let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: 8.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: streetZoom)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         mapView.delegate = self
@@ -168,8 +178,47 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     }
     
      func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        searchController?.searchBar.text = marker.snippet
+        searchController?.searchBar.text = marker.title
         return true
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        //mapView.clear()
+        updateMarkerLocationoordinates()
+    }
+    
+    
+    func setMapMarkertoSelectedPlace(selectedPlace: GMSPlace)
+    {
+        // Creates a marker in the center of the map.
+        mapMarker.position = CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
+        mapMarker.title = selectedPlace.name
+        mapMarker.snippet = selectedPlace.formattedAddress
+        mapMarker.map = mapView
+    }
+    
+    // mapView:idleAtCameraPosition: is invoked once the camera position on GMSMapView becomes idle,
+    // and specifies the relevant camera position. At this point, all animations and gestures have stopped.
+    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
+        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
+            guard error == nil else {
+                return
+            }
+            
+            if let result = response?.firstResult() {
+                self.mapMarker.position = cameraPosition.target
+                self.mapMarker.title = result.lines?[0]
+                self.mapMarker.snippet = result.lines?[1]
+                self.mapMarker.map = mapView
+            }
+        }
+    }
+    
+    func updateMarkerLocationoordinates()
+    {
+        mapMarker.position = CLLocationCoordinate2D(latitude: mapView.camera.target.latitude,
+        longitude: mapView.camera.target.longitude)
     }
 }
 
@@ -182,6 +231,10 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress)")
         print("Place attributions: \(place.attributions)")
+        
+        // Remove prevoise marker
+        //mapView.clear()
+
         
         // Set the map location
         setMapLocation(selectedPlace: place)
@@ -206,18 +259,14 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    func setMapMarkertoSelectedPlace(selectedPlace: GMSPlace)
-    {
-    // Creates a marker in the center of the map.
-    mapMarker.position = CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
-    mapMarker.title = selectedPlace.name
-    mapMarker.snippet = selectedPlace.formattedAddress
-    mapMarker.map = mapView
-    }
-    
     func setMapLocation(selectedPlace: GMSPlace)
     {
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude))
-        mapView.animate(toZoom: 15)
+        mapView.animate(toZoom: streetZoom)
     }
 }
+
+
+// Camera and View  https://developers.google.com/maps/documentation/ios-sdk/views
+// Map Events https://developers.google.com/maps/documentation/ios-sdk/events
+
