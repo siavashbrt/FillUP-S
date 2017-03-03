@@ -34,6 +34,38 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         return view
     }()
     
+    let fillUpLabel:UILabel = {
+        let label = UILabel()
+            label.text = "Fill Up"
+            label.textColor = .black
+        return label
+    }()
+    
+    let navBar:UINavigationBar = {
+        let navBar = UINavigationBar()
+            navBar.backgroundColor = .darkGray
+        let navItem = UINavigationItem(title: "");
+        let settingBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "settings"), style: .plain, target: self, action: #selector(onSettings(_:)))
+            navItem.rightBarButtonItem = settingBtn
+            navBar.setItems([navItem], animated: false)
+        return navBar
+    }()
+    
+    
+    let buttomView:UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    let fillupRequest:UIButton = {
+        let button = UIButton()
+            button.setTitle("Request Fill Up", for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.backgroundColor = .white
+        return button
+    }()
+    
     //  to get and manage user current location
     let locationManager = CLLocationManager()
     
@@ -142,27 +174,46 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         guard let searchBar = searchController?.searchBar else {return}
         
+        view.addSubview(buttomView)
+        
+        view.addConstraintsWithFormat(format: "H:|[v0]|", view: buttomView)
+        view.addConstraintsWithFormat(format: "V:[v0(100)]|", view: buttomView)
+        
+        buttomView.addSubview(fillupRequest)
+        
+        buttomView.addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", view: fillupRequest)
+        buttomView.addConstraintsWithFormat(format: "V:[v0(50)]", view: fillupRequest)
+        
+        fillupRequest.centerYAnchor.constraint(equalTo: buttomView.centerYAnchor).isActive = true
+        
         view.addSubview(mapView)
         
         view.addConstraintsWithFormat(format: "H:|[v0]|", view: mapView)
-        view.addConstraintsWithFormat(format: "V:|[v0]|", view: mapView)
-
+        view.addConstraintsWithFormat(format: "V:|[v0]", view: mapView)
+        
+        mapView.bottomAnchor.constraint(equalTo: buttomView.topAnchor).isActive = true
+    
         searchController?.searchBar.sizeToFit()
 
-    
-        view.addSubview(settingsBtn)
+        view.addSubview(navBar)
         
-        view.addConstraintsWithFormat(format: "H:[v0]-10-|", view: settingsBtn)
-        view.addConstraintsWithFormat(format: "V:|-20-[v0]", view: settingsBtn)
-    
+        view.addConstraintsWithFormat(format: "H:|[v0]|", view: navBar)
+        view.addConstraintsWithFormat(format: "V:|[v0]", view: navBar)
+        
+        navBar.addSubview(fillUpLabel)
+        
+        navBar.addConstraintsWithFormat(format: "H:|-10-[v0]", view: fillUpLabel)
+        navBar.addConstraintsWithFormat(format: "V:[v0]", view: fillUpLabel)
+        
+        fillUpLabel.centerYAnchor.constraint(equalTo: navBar.centerYAnchor).isActive = true
+
         view.addSubview(subView)
         subView.addSubview(searchBar)
         
         subView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         subView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        subView.topAnchor.constraint(equalTo: settingsBtn.topAnchor, constant: 40).isActive = true
+        subView.topAnchor.constraint(equalTo: navBar.topAnchor, constant: 40).isActive = true
         subView.heightAnchor.constraint(equalToConstant: searchBar.frame.height).isActive = true
-        
     }
     
     internal func onSettings(_ sender: UIButton) {

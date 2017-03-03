@@ -52,7 +52,7 @@ class Login_RegisterViewController: UIViewController {
     //Determines whether the user is Still loggein or not
     internal func findTheRightView() {
         
-        if UserDefaults.standard.value(forKey: KEY_UID) != nil  {
+        if UserDefaults.standard.value(forKey: KEY_UID) == nil  {
             
             print("NO USER IS LOGGED IN")
             return
