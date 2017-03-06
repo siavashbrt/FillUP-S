@@ -15,7 +15,7 @@ class RegisterViewController: LoginViewController {
     //Overrideing the viewdidLoad
     override func viewDidLoad() {
         
-        view.backgroundColor = .white
+        view.backgroundColor = darkBlue
         
         setupPageLayout()
     }

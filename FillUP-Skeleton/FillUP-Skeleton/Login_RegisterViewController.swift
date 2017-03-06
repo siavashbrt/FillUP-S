@@ -8,24 +8,44 @@
 
 import UIKit
 
+
 class Login_RegisterViewController: UIViewController {
     
     lazy var loginBtn:UIButton = {
         let button = UIButton()
-            button.backgroundColor = .lightGray
-            button.setTitle("Login", for: .normal)
+            button.backgroundColor = gold
+            button.setTitle("ورود", for: .normal)
             button.addTarget(self, action: #selector(onLoginBtn(_:)), for: .touchUpInside)
             button.translatesAutoresizingMaskIntoConstraints = false
+            button.layer.cornerRadius = 15
+
+            //button.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+            //button.sizeToFit()
         return button
     }()
     
     lazy var registerBtn:UIButton = {
         let button = UIButton()
-            button.backgroundColor = .lightGray
-            button.setTitle("Register", for: .normal)
+            button.backgroundColor = white
+            button.setTitle("ثبت نام", for: .normal)
             button.addTarget(self, action: #selector(onRegisterBtn(_:)), for: .touchUpInside)
             button.translatesAutoresizingMaskIntoConstraints = false
+            button.setTitleColor(gold, for: .normal)
+            button.layer.cornerRadius = 15
         return button
+    }()
+    
+    lazy var logoLabel:UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        //label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .center
+        label.text = "فیلاپ"
+        label.font = label.font.withSize(48)
+        label.textColor = white
+        label.backgroundColor = gold
+        label.center = self.view.center
+        label.layer.cornerRadius = 15
+        return label
     }()
     
     let userClass = Users()
@@ -36,7 +56,7 @@ class Login_RegisterViewController: UIViewController {
         
         //Hide The NavBar on Top
         self.navigationController?.isNavigationBarHidden = true
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = darkBlue
         self.setupPageLayout()
         
         //Fixes the unbalance view warning
@@ -80,6 +100,19 @@ class Login_RegisterViewController: UIViewController {
         loginBtn.centerXAnchor.constraint(equalTo: registerBtn.centerXAnchor).isActive = true
         loginBtn.widthAnchor.constraint(equalTo: registerBtn.widthAnchor).isActive = true
         loginBtn.bottomAnchor.constraint(equalTo: registerBtn.topAnchor, constant: -5).isActive = true
+        
+        //Add logo to view
+        self.view.addSubview(logoLabel)
+        
+        //logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        //registerBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //registerBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true
+        //registerBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100).isActive = true
+
+
+
+
     }
     
     fileprivate func navigatePages(viewController: UIViewController) {

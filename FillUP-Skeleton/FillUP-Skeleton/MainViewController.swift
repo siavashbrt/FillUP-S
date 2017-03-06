@@ -54,15 +54,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     let buttomView:UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = darkBlue
         return view
     }()
     
     let fillupRequest:UIButton = {
         let button = UIButton()
             button.setTitle("Request Fill Up", for: .normal)
-            button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = .white
+            button.setTitleColor(white, for: .normal)
+            button.backgroundColor = gold
         return button
     }()
     

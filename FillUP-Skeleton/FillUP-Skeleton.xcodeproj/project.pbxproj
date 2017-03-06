@@ -26,6 +26,7 @@
 		F32813261E232CC300853A8E /* FillUP_SkeletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32813251E232CC300853A8E /* FillUP_SkeletonTests.swift */; };
 		F32813311E232CC400853A8E /* FillUP_SkeletonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32813301E232CC400853A8E /* FillUP_SkeletonUITests.swift */; };
 		F36331A61E372E8B00A045DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36331A51E372E8B00A045DD /* MapKit.framework */; };
+		F37F62F11E6CF2CD00F3F6F3 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F62F01E6CF2CD00F3F6F3 /* Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		F32813301E232CC400853A8E /* FillUP_SkeletonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillUP_SkeletonUITests.swift; sourceTree = "<group>"; };
 		F32813321E232CC400853A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36331A51E372E8B00A045DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F37F62F01E6CF2CD00F3F6F3 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Style.swift; path = "FillUP-Skeleton/Style.swift"; sourceTree = "<group>"; };
 		FE2B90274732E847BB930BC5 /* Pods-FillUP-SkeletonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillUP-SkeletonUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FillUP-SkeletonUITests/Pods-FillUP-SkeletonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			children = (
 				0B6837741E2336E600DA8BD0 /* User.swift */,
 				0B1E88521E2747D10036E86D /* FirebaseRef.swift */,
+				F37F62F01E6CF2CD00F3F6F3 /* Style.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -287,7 +290,7 @@
 				TargetAttributes = {
 					F32813091E232CC300853A8E = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = LC5873RCDE;
+						DevelopmentTeam = 55BZEFVSXR;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -509,6 +512,7 @@
 				F328130E1E232CC300853A8E /* AppDelegate.swift in Sources */,
 				0B6837791E233B1000DA8BD0 /* MainViewController.swift in Sources */,
 				0B6837751E2336E600DA8BD0 /* User.swift in Sources */,
+				F37F62F11E6CF2CD00F3F6F3 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,7 +659,7 @@
 			baseConfigurationReference = 31CDBF0913E62B66F5EA0E1A /* Pods-FillUP-Skeleton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LC5873RCDE;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
 				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -670,7 +674,7 @@
 			baseConfigurationReference = 2DA1C64D8B59280EAA9B87B4 /* Pods-FillUP-Skeleton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LC5873RCDE;
+				DEVELOPMENT_TEAM = 55BZEFVSXR;
 				INFOPLIST_FILE = "FillUP-Skeleton/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
