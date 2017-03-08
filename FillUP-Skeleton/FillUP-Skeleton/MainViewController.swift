@@ -35,13 +35,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
     }
-    lazy var settingsBtn:UIButton = {
-        let btn = UIButton()
-            let BtnImage = UIImage(named: "settings")
-                btn.setImage(BtnImage, for: .normal)
-                btn.addTarget(self, action: #selector(onSettings(_:)), for: .touchUpInside)
-       return btn
-    }()
     
     lazy var mapMarker:GMSMarker = {
         let mrk = GMSMarker()
@@ -67,7 +60,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         let navBar = UINavigationBar()
             navBar.backgroundColor = .darkGray
         let navItem = UINavigationItem(title: "");
-        let settingBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "settings"), style: .plain, target: self, action: #selector(onSettings(_:)))
+        let settingImage = UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal)
+        let settingBtn = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(onSettings(_:)))
             navItem.rightBarButtonItem = settingBtn
             navBar.setItems([navItem], animated: false)
             navBar.barTintColor = darkBlue
@@ -88,6 +82,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             button.backgroundColor = gold
             button.addTarget(self, action: #selector(sendText(_:)), for: .touchUpInside)
         return button
+    }()
+    
+    lazy var mapCenterPin:UIImageView = {
+        let img = UIImage(named: "marker")
+        let imgview = UIImageView(image: img)
+        return imgview
     }()
     
     //  to get and manage user current location
@@ -198,7 +198,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         mapMarker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
         mapMarker.title = "Current Location"
         mapMarker.snippet = ""
-        mapMarker.map = mapView
+        //mapMarker.map = mapView
     }
     
     internal func setupView() {
@@ -223,6 +223,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         view.addConstraintsWithFormat(format: "V:|[v0]", view: mapView)
         
         mapView.bottomAnchor.constraint(equalTo: buttomView.topAnchor).isActive = true
+        
+        view.addSubview(mapCenterPin)
+        mapCenterPin.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        mapCenterPin.frame = CGRect(x:183, y:290, width:50, height:50)
+
     
         searchBar.sizeToFit()
         searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
@@ -279,7 +284,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         mapMarker.position = CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude)
         mapMarker.title = selectedPlace.name
         mapMarker.snippet = selectedPlace.formattedAddress
-        mapMarker.map = mapView
+        //mapMarker.map = mapView
     }
     
     // mapView:idleAtCameraPosition: is invoked once the camera position on GMSMapView becomes idle,
@@ -294,7 +299,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                 self.mapMarker.position = cameraPosition.target
                 self.mapMarker.title = result.lines?[0]
                 self.mapMarker.snippet = result.lines?[1]
-                self.mapMarker.map = mapView
+                //self.mapMarker.map = mapView
             }
         }
     }
