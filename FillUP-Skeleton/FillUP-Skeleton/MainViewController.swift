@@ -10,9 +10,31 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import GooglePlaces
+import MessageUI
 
-class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+
+class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, MFMessageComposeViewControllerDelegate {
     
+    var phoneNumber:String = ""
+
+    func sendText(_ sender: UIButton) {
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = mapMarker.title
+            controller.recipients = [phoneNumber]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
     lazy var settingsBtn:UIButton = {
         let btn = UIButton()
             let BtnImage = UIImage(named: "settings")
@@ -63,6 +85,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             button.setTitle("Request Fill Up", for: .normal)
             button.setTitleColor(white, for: .normal)
             button.backgroundColor = gold
+            button.addTarget(self, action: #selector(sendText(_:)), for: .touchUpInside)
         return button
     }()
     

@@ -27,6 +27,7 @@
 		F32813311E232CC400853A8E /* FillUP_SkeletonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32813301E232CC400853A8E /* FillUP_SkeletonUITests.swift */; };
 		F36331A61E372E8B00A045DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36331A51E372E8B00A045DD /* MapKit.framework */; };
 		F37F62F11E6CF2CD00F3F6F3 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F62F01E6CF2CD00F3F6F3 /* Style.swift */; };
+		F37F62F31E6E8DB100F3F6F3 /* CommunicationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37F62F21E6E8DB100F3F6F3 /* CommunicationEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		F32813321E232CC400853A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36331A51E372E8B00A045DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F37F62F01E6CF2CD00F3F6F3 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Style.swift; path = "FillUP-Skeleton/Style.swift"; sourceTree = "<group>"; };
+		F37F62F21E6E8DB100F3F6F3 /* CommunicationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationEngine.swift; sourceTree = "<group>"; };
 		FE2B90274732E847BB930BC5 /* Pods-FillUP-SkeletonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillUP-SkeletonUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FillUP-SkeletonUITests/Pods-FillUP-SkeletonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				0B6837741E2336E600DA8BD0 /* User.swift */,
 				0B1E88521E2747D10036E86D /* FirebaseRef.swift */,
 				F37F62F01E6CF2CD00F3F6F3 /* Style.swift */,
+				F37F62F21E6E8DB100F3F6F3 /* CommunicationEngine.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37F62F31E6E8DB100F3F6F3 /* CommunicationEngine.swift in Sources */,
 				0B1E88531E2747D10036E86D /* FirebaseRef.swift in Sources */,
 				0B1DE8661E23505B001DBC99 /* LoginViewController.swift in Sources */,
 				F32813161E232CC300853A8E /* FillUP_Skeleton.xcdatamodeld in Sources */,
