@@ -15,13 +15,13 @@ import MessageUI
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, MFMessageComposeViewControllerDelegate {
     
-    var phoneNumber:String = ""
+    var phoneNumber:String = "5038636736"
 
     func sendText(_ sender: UIButton) {
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
-            controller.body = mapMarker.title
-            controller.recipients = [phoneNumber]
+            controller.body = "درخواست فیلاپ برای آدرس زیر:" + "\n " + mapMarker.title!
+            //controller.recipients = [phoneNumber]
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)
         }
