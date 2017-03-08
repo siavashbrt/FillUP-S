@@ -58,8 +58,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     let fillUpLabel:UILabel = {
         let label = UILabel()
-            label.text = "Fill Up"
-            label.textColor = .black
+            label.text = "فیلاپ"
+            label.textColor = gold
         return label
     }()
     
@@ -70,6 +70,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         let settingBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "settings"), style: .plain, target: self, action: #selector(onSettings(_:)))
             navItem.rightBarButtonItem = settingBtn
             navBar.setItems([navItem], animated: false)
+            navBar.barTintColor = darkBlue
         return navBar
     }()
     
@@ -82,7 +83,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     let fillupRequest:UIButton = {
         let button = UIButton()
-            button.setTitle("Request Fill Up", for: .normal)
+            button.setTitle("درخواست فیلاپ", for: .normal)
             button.setTitleColor(white, for: .normal)
             button.backgroundColor = gold
             button.addTarget(self, action: #selector(sendText(_:)), for: .touchUpInside)
@@ -99,6 +100,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     // 15: Streets
     // 20: Buildings
     let streetZoom: Float = 15.0
+    let defaultZoom: Float = 19.0
     
     let geocoder = GMSGeocoder()
     
@@ -120,6 +122,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
  
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
+        
+        //searchController?.searchBar.barStyle = UIBarStyle.default
+        searchController?.searchBar.barTintColor = darkBlue
+        searchController?.searchBar.backgroundColor = darkBlue
+        searchController?.searchBar.tintColor = darkBlue
+
         
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
@@ -162,7 +170,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate 35.715298,51.404343 (Tehran) at zoom level 8.0.
-        let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: streetZoom)
+        let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: defaultZoom)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         mapView.delegate = self
@@ -181,7 +189,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: (UserCurrentLocationCoordinates?.latitude)!, longitude: (UserCurrentLocationCoordinates?.longitude)!))
 
         // To set the zoom level when mylocation button is pressed
-        mapView.animate(toZoom: 6)
+        mapView.animate(toZoom: defaultZoom)
 
         guard let latitude = UserCurrentLocationCoordinates?.latitude,
                   let longtitude = UserCurrentLocationCoordinates?.longitude else {return}
@@ -216,7 +224,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         mapView.bottomAnchor.constraint(equalTo: buttomView.topAnchor).isActive = true
     
-        searchController?.searchBar.sizeToFit()
+        searchBar.sizeToFit()
+        searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50)
+        searchBar.isTranslucent = false
 
         view.addSubview(navBar)
         
@@ -336,7 +346,7 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     func setMapLocation(selectedPlace: GMSPlace)
     {
         mapView.animate(toLocation: CLLocationCoordinate2D(latitude: selectedPlace.coordinate.latitude, longitude: selectedPlace.coordinate.longitude))
-        mapView.animate(toZoom: streetZoom)
+        mapView.animate(toZoom: defaultZoom)
     }
 }
 
