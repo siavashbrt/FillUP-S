@@ -15,6 +15,7 @@ import MessageUI
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, MFMessageComposeViewControllerDelegate {
     
+    var camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: 15)
     var phoneNumber:String = "5038636736"
 
     func sendText(_ sender: UIButton) {
@@ -170,7 +171,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate 35.715298,51.404343 (Tehran) at zoom level 8.0.
-        let camera = GMSCameraPosition.camera(withLatitude: 35.715298, longitude: 51.404343, zoom: defaultZoom)
+        camera = GMSCameraPosition.camera(withLatitude: (UserCurrentLocationCoordinates?.latitude)!
+            , longitude: (UserCurrentLocationCoordinates?.longitude)!, zoom: defaultZoom)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         mapView.delegate = self
@@ -198,6 +200,20 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         mapMarker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longtitude)
         mapMarker.title = "Current Location"
         mapMarker.snippet = ""
+        
+        geocoder.reverseGeocodeCoordinate(camera.target) { (response, error) in
+            guard error == nil else {
+                return
+            }
+            
+            if let result = response?.firstResult() {
+                //self.mapMarker.position = cameraPosition.target
+                self.searchController?.searchBar.text = result.lines?[0]
+                //self.mapMarker.snippet = result.lines?[1]
+                //self.mapMarker.map = mapView
+            }
+        }
+
         //mapMarker.map = mapView
     }
     
@@ -275,6 +291,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         //mapView.clear()
         updateMarkerLocationoordinates()
+        //updateSeachbarAddress()
     }
     
     
@@ -299,6 +316,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                 self.mapMarker.position = cameraPosition.target
                 self.mapMarker.title = result.lines?[0]
                 self.mapMarker.snippet = result.lines?[1]
+                self.searchController?.searchBar.text = result.lines?[0]
                 //self.mapMarker.map = mapView
             }
         }
@@ -308,6 +326,20 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     {
         mapMarker.position = CLLocationCoordinate2D(latitude: mapView.camera.target.latitude,
         longitude: mapView.camera.target.longitude)
+    }
+    
+    func updateSeachbarAddress()
+    {
+        geocoder.reverseGeocodeCoordinate(mapView.camera.target) { (response, error) in
+            guard error == nil else {
+                return
+            }
+    
+            if let result = response?.firstResult() {
+                self.searchController?.searchBar.text = result.lines?[0]
+
+            }
+        }
     }
 }
 
