@@ -54,6 +54,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         let label = UILabel()
             label.text = "فیلاپ"
             label.textColor = gold
+            label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
@@ -79,6 +80,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     let fillupRequest:UIButton = {
         let button = UIButton()
             button.setTitle("درخواست فیلاپ", for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             button.setTitleColor(white, for: .normal)
             button.backgroundColor = gold
             button.addTarget(self, action: #selector(sendText(_:)), for: .touchUpInside)

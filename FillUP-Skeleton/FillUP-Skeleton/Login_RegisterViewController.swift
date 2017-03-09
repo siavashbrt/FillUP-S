@@ -35,18 +35,34 @@ class Login_RegisterViewController: UIViewController {
         return button
     }()
     
-    lazy var logoLabel:UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+    lazy var logoLabelFirst:UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: 150))
         //label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         label.text = "فیلاپ"
-        label.font = label.font.withSize(48)
+        label.font = label.font.withSize(76)
+        label.font = UIFont.init(name: "Apple Color Emoji", size: 96)
         label.textColor = white
-        label.backgroundColor = gold
+        label.backgroundColor = darkBlue
         label.center = self.view.center
         label.layer.cornerRadius = 15
         return label
     }()
+    
+    lazy var logoLabelSecond:UILabel = {
+        let label = UILabel(frame: CGRect(x: 0, y: 300, width: 100, height: 150))
+        //label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .right
+        label.text = "آپ"
+        label.font = label.font.withSize(76)
+        label.font = UIFont.init(name: "Apple Color Emoji", size: 76)
+        label.textColor = gold
+        label.backgroundColor = darkBlue
+        //label.center = self.view.center
+        label.layer.cornerRadius = 15
+        return label
+    }()
+
     
     let userClass = Users()
     
@@ -91,7 +107,7 @@ class Login_RegisterViewController: UIViewController {
         
         //Register Layout Constraints
         registerBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        registerBtn.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -30).isActive = true
+        registerBtn.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
         registerBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         
         //Add Login To View
@@ -102,9 +118,11 @@ class Login_RegisterViewController: UIViewController {
         loginBtn.bottomAnchor.constraint(equalTo: registerBtn.topAnchor, constant: -5).isActive = true
         
         //Add logo to view
-        self.view.addSubview(logoLabel)
+        self.view.addSubview(logoLabelFirst)
+        //self.view.addSubview(logoLabelSecond)
+
         
-        //logoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //logoLabelEnglish.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -600).isActive = true
 
         //registerBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         //registerBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 300).isActive = true

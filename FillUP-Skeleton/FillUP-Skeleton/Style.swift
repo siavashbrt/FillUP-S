@@ -13,3 +13,5 @@ import UIKit
 let darkBlue:UIColor = UIColor.init(red: 6/255, green: 38/255, blue: 48/255, alpha: 1)
 let gold:UIColor = UIColor.init(red: 180/255, green: 150/255, blue: 80/255, alpha: 1)
 let white:UIColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+let fontModern = UIFont.init(name: "Apple Color Emoji", size: 24)
+
